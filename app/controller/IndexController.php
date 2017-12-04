@@ -29,7 +29,7 @@ class IndexController extends Controller
     public function index()
     {
 
-
+        echo "he";die;
         //Response::send();
         // 获取表单参数
         $name = Request::get("name");
