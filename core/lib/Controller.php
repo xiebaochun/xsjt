@@ -18,7 +18,15 @@ class Controller
         /*
          * 显示view模板
          */
-        echo 'display';
+        $file = APP.'view/'.$view;
+        if(is_file($file)){
+            include $file;
+        }
+    }
+
+    public function assign()
+    {
+
     }
 
     public function __call($name, $arguments)
