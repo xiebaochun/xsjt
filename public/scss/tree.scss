@@ -1,0 +1,381 @@
+@import 'base';
+
+.top-nav {
+    height: 85px;
+    background-color: #fff;
+    padding-top: 0;
+    border-bottom: 1px solid #d8d9db;
+    .nav-item {
+        ul {
+            li {
+                line-height: 85px;
+                a {
+                    color: #151515;
+                }
+            }
+        }
+    }
+}
+
+// 左侧导航栏
+.nav-slide {
+    background-color: #fff;
+    z-index: 10;
+    @extend %fl;
+    ul {
+        li {
+            width: 238px;
+            height: 49px;
+            line-height: 50px;            
+            text-align: center;
+            border: $border;
+            border-top: none;              
+            position: relative;          
+            a {
+                display: block; 
+                color:#363636;
+                font-size: $fontSize;            
+            }
+            
+        }
+        .active {
+            &:before {
+                content: '';
+                height: 15px;
+                border: 2px solid #eb7016;
+                display: block;
+                position: absolute;
+                top: 15px;
+                left: 65px;
+            }
+            a {               
+                display: block; 
+                color: $color;
+            }
+        }
+        
+    }
+}
+
+// 右侧内容栏
+.content {
+    .content-title {
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        color: $color;
+        border-bottom: $border;
+    }
+    p {
+        margin-top: 30px;
+        text-indent: 35px;
+        color: #606060;
+    }
+
+}
+
+
+.speech-content,
+.grup-content,
+.subcompany-content,
+.management-content,
+.honor-content,
+.culture-content,
+.staff-content,
+.business-content,
+.technology-content,
+.cultureBusiness-content,
+.grupNews-content,
+.grupNews-detail,
+.industry-content,
+.video-content,
+.idea-content,
+.recruit-content,
+.recruit-detail,
+.contact-content,
+.contact-suggest {
+    @extend %fr;
+    width: 850px;
+    padding: 30px 40px 80px;
+    margin-bottom:80px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    // @include boxShadow(0,0,10px,1px,#d9dadc);  
+    
+} 
+
+// 董事长致辞
+.speech-content {
+    span {
+        margin-top: 30px;
+        display: block;
+        text-align: right;
+        color: #606060;
+    } 
+    p {
+        font-size: 14px;
+    }
+}
+
+// 集团介绍
+.grup-content,
+.grupNews-detail {
+    img {
+        margin: 20px 40px 0;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+
+// 子公司介绍  金融业务  科技业务  文化业务
+.subcompany-content,
+.business-content,
+.technology-content,
+.cultureBusiness-content {    
+    ul {
+        margin-top: 50px;
+        li {
+            height: 200px;
+            img {
+                @extend %fl;
+                border: $border;
+                @include borderRadius(10px);
+            }
+            .subcompany-info,
+            .business-info,
+            .technology-info,
+            .cultureBusiness-info {
+                @extend %fl;
+                width: 620px;
+                margin-left: 40px;
+                h2 {
+                    color:$color;
+                    font-size: $fontSize;
+                }
+                p {
+                    margin-top: 15px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+// 管理团队
+.management-content {
+    padding-bottom: 30px;
+    ul {
+        margin-top: 50px;
+        li {
+            height: 200px;
+            &:nth-last-of-type(odd){
+                img {
+                    @extend %fl;                    
+                }
+                .management-info {
+                    @extend %fl;
+                    margin-left: 40px;
+                }
+            }
+            &:nth-last-of-type(even){
+                img {
+                    @extend %fr;
+                }
+                .management-info {
+                    @extend %fr;
+                    margin-right: 80px;
+                }
+            }
+            .management-info {
+                width: 620px;
+                margin-top: 15px;
+                h2 {
+                    color:$color;
+                    font-size: $fontSize;
+                }
+                p {
+                    margin-top: 15px;
+                    font-size: 14px;
+                }
+            }
+            &:hover {
+                img {
+                    transition: all .8s;
+                    transform: rotateY(360deg);
+                }
+            }
+        }
+    }
+}
+
+// 集体荣誉  员工风采  视频中心
+.honor-content,
+.video-info {
+    ul {
+        @extend %clearfix;        
+        margin-top: 30px;
+        margin-left: -50px;
+        li {
+            @extend %fl;
+            width: 250px;
+            height: 250px;
+            margin-left: 50px;
+            text-align: center;
+            margin-top: 20px;
+            p {
+                font-size: $fontSize;
+                color: #7a7a7a;
+                margin-top: 25px;
+                text-indent: 0;      
+                font-weight: 700;         
+            }
+        }
+    }
+}
+
+// 企业文化
+.culture-content {
+    padding-bottom: 30px;
+    .charts {
+        float: left;
+        display: block;
+        width: 125px;
+        height: 145px;
+        margin-top:220px;
+        background: url('../images/sprite_02.png') no-repeat 0 0;
+        position: relative;
+        &:before , &:after {
+            content: '';
+            height: 120px;
+            display: block;
+            border: 1px dashed #a0a0a0;
+            position: absolute;
+            top: 145px;
+            left: 60px;
+        }
+        &:before {
+            height: 115px;
+            top: -115px;
+        }
+        &:after {
+            top: 145px;
+        }
+    }
+    ul {        
+        margin-top: 30px;
+        li {
+            height: 150px;
+            padding: 0 30px;
+            margin-left: 220px;
+            margin-bottom: 40px;
+            position: relative;
+            &:nth-of-type(1){
+                &:before {
+                    content:'';
+                    width: 125px;
+                    height: 145px;
+                    display: block;
+                    background: url('../images/sprite_02.png') no-repeat 0 -149px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                &:after {
+                    content: '';
+                    width: 150px;
+                    display: block;
+                    border: 1px dashed #a0a0a0;
+                    position: absolute;
+                    top: 50%;
+                    left: -155px;
+                }
+                
+            }
+            &:nth-of-type(2){
+                &:before {
+                    content:'';
+                    width: 125px;
+                    height: 145px;
+                    display: block;
+                    background: url('../images/sprite_02.png') no-repeat 0 -300px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                &:after {
+                    content: '';
+                    width: 90px;
+                    display: block;
+                    border: 1px dashed #a0a0a0;
+                    position: absolute;
+                    top: 50%;
+                    left: -95px;
+                }
+            }
+            &:nth-of-type(3){
+                &:before {
+                    content:'';
+                    width: 125px;
+                    height: 145px;
+                    display: block;
+                    background: url('../images/sprite_02.png') no-repeat 0 -446px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                &:after {
+                    content: '';
+                    width: 150px;
+                    display: block;
+                    border: 1px dashed #a0a0a0;
+                    position: absolute;
+                    top: 50%;
+                    left: -155px;
+                }
+            }
+            .culture-info {
+                margin-top: 30px;    
+                @extend %fl;
+                margin-left: 120px;            
+                h2 {
+                    color:$color;
+                    font-size: $fontSize;
+                }
+                p {
+                    margin: 0;
+                    text-indent: 0;
+                    font-size: 14px;
+                }
+                
+            }
+        }
+    }
+}
+
+// 员工风采
+.staff-content {
+    .staff-info {
+        @extend %clearfix;
+        ul {
+            margin-left: -41px;
+            @extend %clearfix;        
+            li {
+                @extend %fl;
+                text-align: center;
+                margin-left: 41px;
+                margin-top: 20px;
+                p {
+                    font-size: $fontSize;
+                    color: #777;
+                    margin-top: 25px;
+                    text-indent: 0;      
+                    font-weight: 700;         
+                }
+    
+            }
+        }
+    }
+    
+}
+

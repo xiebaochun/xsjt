@@ -64,11 +64,71 @@ class IndexController extends Controller
         // Session::set('session_test', $a);
         // p(Session::get('session_test'));
 
-
         // p($_SERVER);
         // Debug::remark("b");
         // echo Debug::getRangeTime('a','b');
-
         $this->display('index.html');
     }
+
+    public function business(){
+        $this->assign('index', Request::get("a") ? Request::get("a") : '1');
+        $this->display('pages/business.html');
+    }
+
+    public function contact(){
+        $this->assign('index', Request::get("a") ? Request::get("a") : '1');
+        $this->display('pages/contact.html');
+    }
+
+    public function news(){
+        $index = Request::get("a") ? Request::get("a") : '1';
+        $id = Request::get("id") ? Request::get("id") : 'null';
+        $this->assign('index', $index);
+        if($index == 1){
+            $page = Request::get("page") ? Request::get("page") : '1';
+            $result = v35_post('ajax-group_article_list&p='.$page);
+            // p($result->list);
+            $this->assign('page', $page);
+            $this->assign('count', $result->count);
+            $this->assign('list', $result->list);
+        }
+
+        if($id){
+            $article = v35_post('ajax-group_article_detail?id='.$id);
+            //p($article);
+            $this->assign('id', $id);
+            $this->assign('_article', $article);
+        }
+
+        $this->display('pages/news.html');
+    }
+
+    public function partner(){
+        $this->display('pages/partner.html');
+    }
+
+    public function recruit(){
+         $this->assign('index', Request::get("a") ? Request::get("a") : '1');
+        $this->display('pages/recruit.html');
+    }
+
+    public function tree(){
+        // var_dump(Request::get("a"));die;
+        $this->assign('index', Request::get("a") ? Request::get("a") : '1');
+        $this->display('pages/tree.html');
+    }
+
+    public function save_visitor_info(){
+        $name = $_REQUEST['name'];
+        $phone = $_REQUEST['phone'];
+        $email = $_REQUEST['email'];
+        $message = $_REQUEST['message'];
+        // echo json_encode(array('name'=>$name,'phone'=>$phone,'email'=>$email,'message'=>$message));
+        // exit;
+        //$result = v35_post('ajax-group_save_visitor_info',array('name'=>$name,'phone'=>$phone,'email'=>$email,'message'=>$message));
+        $result = v35_post('ajax-group_save_visitor_info?name='.$name.'&phone='.$phone.'&email='.$email.'&message='.$message);
+        //echo json_encode('ajax-group_save_visitor_info?name='.$name.'&phone='.$phone.'&email='.$email.'&message='.$message);
+        echo json_encode($result);
+    }
+
 }

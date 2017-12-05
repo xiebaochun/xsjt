@@ -1,0 +1,78 @@
+@import 'base';
+@import 'tree';
+
+// 合作伙伴
+.banner {
+    margin: 0;
+}
+.partner {
+    background-color: #f8f8f8;
+    padding: 30px 0 50px;
+    position: relative;
+    &:before {
+        content: '';
+        width: 28px;
+        height: 50px;
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 45%;
+        background: url('../images/sprite_02.png') no-repeat 0 -598px;
+    }
+    .subtitle {
+        font-size: 18px;
+        &:before {
+            width: 100px;
+            height: 2px;
+            background-color: #d0d0d0;
+            content: '';
+            display: block;
+            position: absolute;
+            top: 11px; 
+            left: 450px;
+    
+        }
+        &:after {
+            width: 100px;
+            height: 2px;
+            background-color: #d0d0d0;
+            content: '';
+            display: block;
+            position: absolute;
+            top: 11px; 
+            right: 450px;           
+            
+        }
+    }
+    .partner-content {
+        ul {
+            margin-top: 50px;
+            li {
+                height: 105px;
+                padding: 30px 0;
+                border-bottom: 2px dashed #ebebeb;
+                img {
+                    @extend %fl;
+                    width: 160px;
+                    height: 80px;
+                }
+                .partner-info {
+                    @extend %fl;
+                    margin-left: 40px;
+                    width: 930px;
+                    h2 {
+                        font-size: 18px;
+                        color: $color;
+                        padding-bottom: 10px;
+                    }
+                    p {
+                        text-indent: 35px;
+                        color: #606060;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+

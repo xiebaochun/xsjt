@@ -1,0 +1,144 @@
+@import 'base';
+@import 'tree';
+
+// 用人理念
+.idea-content,
+.recruit-content {
+    h3 {
+        font-size: 18px;
+        text-align: left;
+        line-height: 90px;
+        padding: 0 30px;
+        margin-top: 20px;
+        font-weight: 400;
+        color: #fff;
+        background: url('../images/recruit_01.png') no-repeat;
+        position: relative;
+        &:after {
+            content: '';
+            width: 70px;
+            height: 85px;
+            display: block;
+            position: absolute;
+            top: 8px;
+            right: 0;
+            background: url('../images/sprite_01.png') no-repeat 0 0;
+        }
+    }
+    p {
+        padding: 0 20px;
+        font-size: 14px;
+    }
+   img {
+        margin: 20px 110px 0;
+   }
+} 
+
+// 招聘岗位
+.recruit-content {
+    h3 {
+        font-size: 18px;
+        &:after {
+            content: '';
+            width: 70px;
+            height: 85px;
+            display: block;
+            position: absolute;
+            top: 9px;
+            right: 0;
+            background: url('../images/sprite_01.png') no-repeat -70px 0;
+        }
+    }
+    .recruit-info {
+        table {
+            margin: 15px 0;
+            thead {
+                background-color: #efeff4;
+                color: #777;
+                tr {
+                    td {
+                        height: 45px;
+                        padding-left: 20px;
+                        font-size: 16px
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        width: 140px;
+                        height: 54px;
+                        padding-left: 18px;
+                        color: #555;
+                        font-size: 16px;
+                        &:nth-of-type(1) {
+                            position: relative;
+                            padding-left: 20px;
+                            a {
+                                color:#4b9df9;
+                            }
+                            &:before {
+                                content: '';
+                                display: block;
+                                width: 8px;
+                                height: 8px;
+                                border: 1px solid #aeaeae;
+                                @include borderRadius(8px);
+                                // background-color: red;
+                                position: absolute;
+                                top: 22px;
+                                left: 0;
+                            }
+                        }
+                        &:nth-of-type(2) {
+                            width: 200px;
+                        }                        
+                    }
+                    &+tr {                            
+                        border-top: 1px dashed #f0f0f0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 招聘岗位详情
+.recruit-detail {
+    .info {
+        padding: 0 20px;
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 700;
+            color: #434955;
+            font-size: $fontSize;
+        }
+        h4 {
+            color: #b6b6b6;
+            margin: 10px 0 0 75px;
+            text-align: center;
+        }
+        a {
+            color: #749ff8;
+            @extend %fr;
+            margin-right: 30px;
+        }
+        p {
+            margin: 15px 0;
+            text-indent: 0;
+            font-weight: 700;
+            color: #444444;
+        }
+        span {
+            color: #6d7581;
+        }
+        ul {
+            margin-top: 15px;
+            color: #6d7581;
+            li {
+                margin: 7px 0;
+            }
+        }
+    }
+}

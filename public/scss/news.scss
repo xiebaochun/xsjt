@@ -1,0 +1,122 @@
+@import 'base';
+@import 'tree';
+
+// 集团要闻  行业要闻
+.grupNews-content,
+.industry-content {
+    .grupNews-info,
+    .industry-info {
+        ul {
+            @extend %clearfix;
+            margin: 0 0 50px -50px;
+            li {
+                @extend %fl;
+                width: 250px;
+                height: 360px;
+                margin-left: 48px;   
+                margin-top: 30px;             
+                border: $border;
+                border-radius: 10px 10px 0 0;
+                overflow: hidden;
+                position:relative;
+                &:hover {
+                    @include boxShadow(0,0,8px,3px,#d8d9db);
+                } 
+
+                .icon{
+                    width: 100%;
+                    height: 160px;
+                    background-position: center;
+                    background-size: cover;
+                }
+                &>a{
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                }
+                .info {
+                    padding: 0 20px 5px;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 6;
+                    overflow: hidden;
+                    h2 {
+                        text-align: center;
+                        margin-top: 10px;
+                        a {
+                            font-weight: 700;
+                            color: #434955;
+                            font-size: $fontSize;
+                        }
+                    }
+                    span {
+                        color: #b6b6b6;
+                    }
+                    p {
+                        margin-top: 5px;
+                        font-size: 14px;                    
+                        a {
+                            color: #787f8a;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 集团要闻详情
+.grupNews-detail {
+    h3 {
+        text-align: center;
+        margin-top: 20px;
+        font-weight: 700;
+        color: #434955;
+        font-size: $fontSize;
+    }
+    h4 {
+        color: #b6b6b6;
+        margin: 10px 0 0 75px;
+        text-align: center;
+    }
+    a {
+        color: #749ff8;
+        @extend %fr;
+        margin-right: 30px;
+    }
+    p {
+        padding: 0 20px;
+    }
+    img {
+        margin: 20px 140px 0;
+    }
+}
+
+// 视频中心
+.video-content {
+    .video-info {
+        ul {
+            li {
+                position: relative;
+                .img-mask {
+                    width: 250px;
+                    height: 165px;
+                    background-color: rgba($color: #000000, $alpha: .3);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                .iconfont {
+                    position: absolute;
+                    top: 50px;
+                    left: 100px;
+                    color: #e5e5e5;
+                    font-size: 46px;
+                }
+            }
+        }
+    }
+}

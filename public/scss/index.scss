@@ -1,0 +1,272 @@
+@import 'base';
+
+// 轮播图
+.carousel {
+	min-width: 1200px;
+	position: relative;
+	overflow: hidden;
+	@extend %clearfix;
+		.slogan-h {
+			position: absolute;
+			top: 25%;
+			right:25%;			
+			z-index: 100;
+			@extend %fr;
+			color: #fff;			
+			animation: translateX 2s;			
+			@keyframes translateX {
+				from {
+					right:-20%;
+				}
+				to {
+					right: 25%;
+				}
+			}
+			h2 {
+				font-size: 64px;				
+			}
+		}
+		.slogan-p{
+			position: absolute;
+			top: 35%;
+			right: 8%;
+			z-index: 100;
+			@extend %fr;
+			color: #fff;		
+
+			animation: translateY 2s;			
+			@keyframes translateY {
+				from {
+					top: 120%;
+				}
+				to {
+					top : 35%;
+				}
+			}
+			p {
+				font-size: 42px;
+				margin: 20px 0;
+			}
+			span {
+				font-size: 32px;
+			}
+		}
+		.leftCtrl , .rightCtrl {
+			width: 50px;
+			height: 80px;
+			display: block;
+			@include borderRadius(5px);
+			position: absolute;
+			background-color: rgba(0,0,0,.32);
+			z-index: 100;
+			font-size: 40px;
+			color: #fff;
+			line-height: 80px;
+			text-align: center;
+			cursor: pointer;
+			display: none;
+		}
+		.leftCtrl {
+			left: 30px;
+		}
+		.rightCtrl {
+			right: 30px;
+		}
+	
+	.carousel-img {
+		// position: absolute;
+		// left: 0;
+		// top: 0;
+
+		img {
+			width: 100%;
+			position: absolute;
+			left: 0;	
+			top: 0;
+			transition: 2s;
+		
+		}
+
+		
+	}
+}
+
+// 集团介绍
+.introduce {
+	min-width: 1200px;
+	background-color: #f2f3f5;
+	padding-bottom: 100px;
+	@extend %clearfix;
+	.introduce-img {
+		width: 720px;
+        height: 579px;
+        margin: 0 auto;
+		position: relative;
+		.mask {
+			width: 720px;
+			height: 579px;
+			background-color: rgba(0,0,0,.5);
+			position: absolute;
+			top: 0;
+			z-index: 99;
+			left: 0;
+		}
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	.introduce-info {
+		// @extend %fl;
+		width: 445px;
+		margin-left: 30px;
+		position: absolute;
+        top: 110px;
+        right: 378px;
+		h2 {
+			font-size: 28px;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+		p {
+			color: #3a3a3a;
+			font-size: 16px;
+			text-indent: 35px;
+		}
+		p:nth-of-type(1) {
+			
+		}
+		
+		
+	}
+}
+
+// 三大战略业务
+.strategic {
+	padding :50px 0;	
+	min-width: 1200px;
+	.strategic-service {
+		@extend %clearfix;
+		ul{
+			margin: 50px auto;
+			li {
+				@extend %fl;
+				width: 370px;
+				height: 180px;
+				color: #444444;
+				margin: 0 15px;
+				padding-top: 270px;
+				// background-color: red;
+				position: relative;
+				.icon {
+					width: 260px;
+					height: 260px;
+					text-align: center;
+					line-height: 250px;
+					border: 5px solid #f1b932;
+					@include borderRadius(50%);
+					position: absolute;
+					top: 0;
+					left: 50px;
+					.iconfont {
+						font-size: 100px;
+						color: #f1b932;
+					}
+					&:hover {
+						transition: all 0.5s;
+						background-color: #f1b932;
+						.iconfont {
+							color: #fff;
+						}
+					}
+				}
+				p {
+					margin: 20px 0;
+					text-align: center;
+					font-size: 22px;
+					// font-weight: 700;
+				}
+				span {
+					max-width: 300px;
+					display: block;
+					margin: 0 auto;
+					text-align: justify;
+					font-size: 14px;
+					color: #555;
+				}
+			}
+		}
+	}
+}
+
+// 集团最新动态
+.news {
+	min-width: 1200px;
+	@extend %clearfix;
+	padding :50px 0;
+	background-color: #f2f3f5;
+	ul {
+		@extend %clearfix;
+		margin: 50px auto;
+		li {
+			@extend %fl;
+			width: 368px;
+			height: 488px;
+			margin: 0 15px;
+			display: inline-block;
+			background-color: #fff;
+			@include borderRadius(10px);
+			border: 1px solid #ededed;
+			overflow: hidden;
+			&:hover {
+				@include boxShadow(0,0,8px,3px,#d8d9db);
+			}
+			.news-info {
+				padding: 20px;
+				h2 {
+					font-size: 20px;
+					margin-bottom: 10px;
+				}
+				span {
+					color: #acacac;
+				}
+				p {
+					font-size: $fontSize;
+					margin-top: 15px;
+					color: #696969;
+				}
+			}
+		}
+	}
+}
+
+//合作伙伴
+.partners {
+	padding :50px 0 60px;
+	min-width: 1200px;
+	ul {
+		@extend %clearfix;
+		margin: 0 auto 50px;
+		li {
+			@extend %fl;
+			margin: 0 10px 50px;
+			// &:hover {
+			// 	transform:rotate(7deg);
+			// 	-ms-transform:rotate(7deg); 	/* IE 9 */
+			// 	-moz-transform:rotate(7deg); 	/* Firefox */
+			// 	-webkit-transform:rotate(7deg); /* Safari 和 Chrome */
+			// 	-o-transform:rotate(7deg); 
+			// }
+		}
+	}
+}
+
+// 页脚
+
+
+
+// 返回顶部
+// .top {
+// 	display: none;
+// }

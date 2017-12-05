@@ -1,0 +1,153 @@
+@import 'tree';
+
+// 联系我们
+.contact-content {
+    .contact-item {
+        h3 {
+            margin-top: 15px;
+            font-size: $fontSize;
+            .iconfont {
+                color:$color;
+                font-size: 26px;
+                vertical-align: sub;
+            }
+            
+        }
+        p {
+            text-indent: 0;
+            margin: 5px 0;
+            em {
+                color:$color;
+            }
+        }
+        #map {
+            height:500px;
+            margin: 20px 0;
+        }
+        .contact-address {
+            p {
+                margin: 5px 0;
+                text-indent: 0;
+            }
+        }
+    }
+}
+
+// 投诉建议
+.contact-suggest {
+    h3 {
+        text-align: left;
+        padding: 15px 30px;
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        background: url('../images/recruit_01.png') no-repeat;
+        position: relative;
+        &:after {
+            content: '';
+            width: 70px;
+            height: 85px;
+            display: block;
+            position: absolute;
+            top: 5px;
+            right: 0;
+            background: url('../images/sprite_01.png') no-repeat -185px 0;
+        }
+    }
+    p {
+        text-indent: 0;
+        font-size: $fontSize;
+        color: #343434;
+    }
+    .user-item,.tel-item,.email-item,.textarea-item {
+        width: 578px;
+        height: 33px;
+        display: block;
+        border: $border;
+        padding-left: 40px;
+        margin-top: 15px;
+        background-color: #f2f3f5;
+        position: relative;
+        
+        input {
+            width: 578px;
+            height: 33px;
+            line-height: 33px;
+        }
+        #userName,#userTel,#userEmail {
+            position: absolute;
+            top: 5px;
+            left: 40px;
+            color: #757575;
+        }
+        .iconfont {
+            position: absolute;
+            top: 5px;
+            left: 15px;
+            color: #bdc0c5;
+        }
+        .fill-tips{
+            height: 20px;
+            font-size: 12px;
+            color: #f00;
+            line-height: 20px;
+            position: absolute;
+            top: 5px;
+            right:-130px;
+        }
+    }
+    #userSuggest {
+        position: absolute;
+        top: 1px;
+        left: 40px;
+        color: #757575;
+    }
+    .textarea-item {
+        padding-left: 40px;
+        width: 578px;   
+        height: 150px;     
+        margin-top: 15px;
+        padding-top: 5px;
+        border: $border;                 
+        background-color: #f2f3f5;   
+        position: relative;
+        textarea {
+            width: 100%;
+        }
+        i {
+            position: absolute;
+            top: 0;
+            left: 15px;
+            color: #bdc0c5;
+        }
+        
+    }
+
+    .crtlBtn {
+        .submitBtn ,.resetBtn {
+            width: 140px;
+            height: 40px;
+            display: block;
+            @extend %fl;
+            margin-top: 30px;
+            margin-right: 25px;
+            background-color: #dbdce0;
+            font-size: 18px;
+            color: 999b9d;
+            line-height: 40px;
+            text-align: center;
+            @include borderRadius(5px);
+            &:hover {
+                background-color: $color;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+    }
+    .bottom-message{
+        padding: 10px 0;
+        font-size: 18px;
+    }
+   
+} 
